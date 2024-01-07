@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ book.title }}</title>
+</head>
+<body>
+<h1>{{ book.title }}</h1>
+<p>Author: {{ book.author }}</p>
+<p>ISBN: {{ book.isbn }}</p>
+<p>Description: {{ book.description }}</p>
+<h2>Reviews</h2>
+<ul>
+{% for review in reviews %}
+<li><strong>{{ review.title }}</strong> - {{ review.body }} (Rating: {{ review.rating }})</li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('add_review', book_id=book.id) }}">Add a Review</a>
+</body>
+</html>
+
+
